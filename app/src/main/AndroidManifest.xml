@@ -3,7 +3,7 @@
     package="hartman.ryan.flashbeepandshake">
 
     <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
-    <service android:name=".VibrateService"/>
+
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
@@ -25,6 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".VibrateService"/>
+        <service android:name=".BeepService"/>
+
     </application>
 
 </manifest>

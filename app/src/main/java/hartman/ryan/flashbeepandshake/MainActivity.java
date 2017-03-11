@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
     private Button flashButton,
@@ -65,9 +66,17 @@ public class MainActivity extends Activity {
                 // TODO Auto-generated method stub
 
                 // Create a New Intent and start the service
-                Intent intentVibrate =new Intent(getApplicationContext(),VibrateService.class);
+                Intent intentVibrate = new Intent(getApplicationContext(), VibrateService.class);
                 startService(intentVibrate);
 
+            }
+        });
+
+        beepButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                Intent intentBeep = new Intent(getApplicationContext(), BeepService.class);
+                startService(intentBeep);
             }
         });
 
@@ -94,6 +103,7 @@ public class MainActivity extends Activity {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 cameraManager.setTorchMode(cameraID, true);
+                Toast.makeText(getApplicationContext(), "Phone is Flashing", Toast.LENGTH_LONG).show();
                 //playOnOffSound();
                 //mTorchOnOffButton.setImageResource(R.drawable.on);
             }
