@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Flash, Beep and Shake</string>
+    <string name="beep">Beep</string>
+    <string name="flash">Flash</string>
+    <string name="shake">Shake</string>
+</resources>
+
